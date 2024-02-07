@@ -15,3 +15,5 @@ e
 5src/main/java/ru/vbutkov/showcase/NewTaskPayload.java,9/e/9e0bccbfbe2bccefde1620bdb0dfefda4aa65a6a
 i
 9src/main/java/ru/vbutkov/showcase/ErrorsPresentation.java,c/a/ca4b0a608ee31ecc8b61176bde9fc7a4c5293bbc
+n
+>src/test/java/ru/vbutkov/showcase/TasksRestControllerTest.java,7/f/7f3de2a07953ad894893e80c7a07c33a69b472f1
