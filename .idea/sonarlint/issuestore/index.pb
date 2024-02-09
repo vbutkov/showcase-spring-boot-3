@@ -17,3 +17,7 @@ i
 9src/main/java/ru/vbutkov/showcase/ErrorsPresentation.java,c/a/ca4b0a608ee31ecc8b61176bde9fc7a4c5293bbc
 n
 >src/test/java/ru/vbutkov/showcase/TasksRestControllerTest.java,7/f/7f3de2a07953ad894893e80c7a07c33a69b472f1
+J
+showcase-spring-boot-3.iml,0/0/0085ff71048b73e0aea5397ea9a179f1129c8dae
+l
+<src/test/java/ru/vbutkov/showcase/TasksRestControllerIT.java,0/6/063fddfba4cdfe043ac8c9105cb5ef71a03c9bdb
