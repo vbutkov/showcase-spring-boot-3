@@ -9,8 +9,6 @@ j
 :src/main/java/ru/vbutkov/showcase/TasksRestController.java,9/a/9a7ad260d9b35090f605df857d07a0c31075cb1e
 e
 5src/main/java/ru/vbutkov/showcase/TaskRepository.java,c/9/c90595360dfc51b0113c5e8d6d415a65e91d4952
-j
-:src/main/java/ru/vbutkov/showcase/InMemTaskRepository.java,f/0/f0c355bffa1cac01459d609e0ef681e5ef0c3c38
 e
 5src/main/java/ru/vbutkov/showcase/NewTaskPayload.java,9/e/9e0bccbfbe2bccefde1620bdb0dfefda4aa65a6a
 i
@@ -21,3 +19,9 @@ J
 showcase-spring-boot-3.iml,0/0/0085ff71048b73e0aea5397ea9a179f1129c8dae
 l
 <src/test/java/ru/vbutkov/showcase/TasksRestControllerIT.java,0/6/063fddfba4cdfe043ac8c9105cb5ef71a03c9bdb
+s
+Csrc/main/java/ru/vbutkov/showcase/JdbcOperationsTaskRepository.java,d/6/d649b12d09de702887f8923cfed5adf25f4239e0
+f
+6src/main/java/ru/vbutkov/showcase/ApplicationUser.java,d/2/d20d3fe24ec066439b2878923819e9ba9f0fdfde
+t
+Dsrc/main/java/ru/vbutkov/showcase/ApplicationUserDetailsService.java,5/7/578b4a1a9e27d038d6e2f3fac58c52e4172ee5df

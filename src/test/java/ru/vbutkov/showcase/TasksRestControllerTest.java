@@ -34,14 +34,16 @@ class TasksRestControllerTest {
     @DisplayName("GET /api/tasks/ Get list tasks")
     void handleGetAllTasks_ReturnsValidResponseEntity() {
         //given
+        ApplicationUser user = new ApplicationUser(UUID.randomUUID(), "user1", "password1");
+
         List<Task> tasks = List.of(
-                new Task(UUID.randomUUID(), "Первая задача", false),
-                new Task(UUID.randomUUID(), "Вторая задача", false)
+                new Task(UUID.randomUUID(), "Первая задача", false, user.id()),
+                new Task(UUID.randomUUID(), "Вторая задача", false, user.id())
         );
-        doReturn(tasks).when(this.taskRepository).findAll();
+        doReturn(tasks).when(this.taskRepository).findByUserId(user.id());
 
         //when
-        ResponseEntity<List<Task>> responseEntity = this.controller.handleGetAllTasks();
+        ResponseEntity<List<Task>> responseEntity = this.controller.handleGetAllTasks(user);
 
         //then
         assertNotNull(responseEntity);
@@ -54,10 +56,12 @@ class TasksRestControllerTest {
     @Test
     void handleCreateNewTask_PayloadIsValid_ReturnsValidResponseEntity() {
         //given
+        ApplicationUser user = new ApplicationUser(UUID.randomUUID(), "user1", "password1");
         String details = "Третья задача";
 
         //when
         ResponseEntity<?> responseEntity = this.controller.handleCreateNewTask(
+                user,
                 new NewTaskPayload(details),
                 UriComponentsBuilder.fromUriString("http://localhost:8080"),
                 Locale.ENGLISH);
@@ -70,6 +74,7 @@ class TasksRestControllerTest {
             assertNotNull(task.id());
             assertEquals(details, task.details());
             assertFalse(task.completed());
+            assertEquals(user.id(), task.userId());
 
             assertEquals(
                     URI.create("http://localhost:8080/api/tasks/" + task.id()),
@@ -87,6 +92,7 @@ class TasksRestControllerTest {
     @Test
     void handleCreateNewTask_PayloadIsInvalid_ReturnsValidResponseEntity() {
         //given
+        ApplicationUser user = new ApplicationUser(UUID.randomUUID(), "user1", "password1");
         String details = "    ";
         Locale locale = Locale.CANADA;
         String errorMsg = "Details is empty";
@@ -99,6 +105,7 @@ class TasksRestControllerTest {
 
         //when
         ResponseEntity<?> responseEntity = this.controller.handleCreateNewTask(
+                user,
                 new NewTaskPayload(details),
                 UriComponentsBuilder.fromUriString("http://localhost:8080"),
                 locale
